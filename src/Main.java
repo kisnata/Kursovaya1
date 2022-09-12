@@ -4,36 +4,36 @@ public class Main {
     public static double getSum() {
         double sum = 0;
         for (Employee value : employees) {
-            sum = sum + value.getPay();
+            sum = sum + value.getSalary();
         }
         return sum;
     }
 
-    public static void getMaxPay() {
+    public static void getMaxSalary() {
         String expensiveEmployee = "";
-        double maxPay = employees[0].getPay();
+        double maxPay = employees[0].getSalary();
         for (Employee employee : employees) {
-            if (maxPay < employee.getPay()) {
-                maxPay = employee.getPay();
-                expensiveEmployee = employee.getFio();
+            if (maxPay < employee.getSalary()) {
+                maxPay = employee.getSalary();
+                expensiveEmployee = employee.getFullname();
             }
         }
         System.out.println("Сотрудник с самой высокой зарплатой - " + expensiveEmployee);
     }
 
-    public static void getMinPay() {
+    public static void getMinSalary() {
         String cheapEmployee = " ";
-        double minSalary = employees[0].getPay();
+        double minSalary = employees[0].getSalary();
         for (Employee employee : employees) {
-            if (minSalary > employee.getPay()) {
-                minSalary = employee.getPay();
-                cheapEmployee = employee.getFio();
+            if (minSalary > employee.getSalary()) {
+                minSalary = employee.getSalary();
+                cheapEmployee = employee.getFullname();
             }
         }
         System.out.println("Сотрудник с самой низкой зарплатой - " + cheapEmployee);
     }
 
-    public static double averagePay() {
+    public static double averageSalary() {
         return Math.ceil(getSum() / employees.length);
     }
 
@@ -57,15 +57,15 @@ public class Main {
         }
         System.out.println();
         System.out.println("Сумма затрат на зарплаты сотрудников в месяц составила - " + getSum());
-        System.out.println("Средний размер оплаты труда сотрудников соствляет - " + averagePay());
+        System.out.println("Средний размер оплаты труда сотрудников соствляет - " + averageSalary());
         System.out.println();
 
         for (Employee e : employees) {
-            System.out.println(e.getFio());
+            System.out.println(e.getFullname());
         }
         System.out.println();
 
-        getMaxPay();
-        getMinPay();
+        getMaxSalary();
+        getMinSalary();
     }
 }

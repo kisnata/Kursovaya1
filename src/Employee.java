@@ -1,45 +1,45 @@
 public class Employee {
-    private final String fio;
-    private int otdel;
-    private double pay;
+    private final String fullname;
+    private int department;
+    private double salary;
     private final int id;
     private static int counter = 1;
 
 
-    public Employee(String fio, int otdel, double pay) {
+    public Employee(String fullname, int department, double salary) {
 
-        this.fio = fio;
-        this.otdel = otdel;
-        this.pay = pay;
+        this.fullname = fullname;
+        this.department = department;
+        this.salary = salary;
         this.id = counter++;
     }
 
-    public String getFio() {
-        return fio;
+    public String getFullname() {
+        return fullname;
     }
 
-    public int getOtdel() {
-        return otdel;
+    public int getDepartment() {
+        return department;
     }
 
-    public double getPay() {
-        return pay;
+    public double getSalary() {
+        return salary;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setOtdel(int Otdel) {
-        otdel = otdel;
+    public void setDepartment(int department) {
+        department = department;
     }
 
-    public void setPay(int pay) {
-        this.pay = pay;
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
     @Override
     public String toString() {
-        return "| " + getId() + "| " + getFio() + "| " + getOtdel() + "| " + getPay() + "|";
+        return "| " + getId() + "| " + getFullname() + "| " + getDepartment() + "| " + getSalary() + "|";
     }
 }
