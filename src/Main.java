@@ -1,5 +1,8 @@
+
 public class Main {
-    static Employee[] employees = new Employee[10];
+    static Employee[]
+            employees = new Employee[10];
+    private static Object args;
 
     public static double getSum() {
         double sum = 0;
@@ -32,13 +35,19 @@ public class Main {
         }
         System.out.println("Сотрудник с самой низкой зарплатой - " + cheapEmployee);
     }
-
-    public static double averageSalary() {
-        return Math.ceil(getSum() / employees.length);
+        public static void averageSalary() {
+            int getSum = 0;
+            for (Employee element : employees) {
+                if (element != null) {
+                    getSum += element.getSalary();
+                }
+            }
+            float averageSalary = getSum / employees.length;
+            System.out.println("Средняя зарплата сотрудников: " + averageSalary + " рублей.");
     }
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
 
         employees[0] = new Employee("Сидоров Иван Петрович", 3, Math.ceil(Math.random() * 100000));
         employees[1] = new Employee("Кузнецов Алексей Сергеевич", 5, Math.ceil(Math.random() * 100000));
@@ -57,7 +66,6 @@ public class Main {
         }
         System.out.println();
         System.out.println("Сумма затрат на зарплаты сотрудников в месяц составила - " + getSum());
-        System.out.println("Средний размер оплаты труда сотрудников соствляет - " + averageSalary());
         System.out.println();
 
         for (Employee e : employees) {
