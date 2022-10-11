@@ -35,16 +35,19 @@ public class Main {
         }
         System.out.println("Сотрудник с самой низкой зарплатой - " + cheapEmployee);
     }
-        public static void averageSalary() {
-            int getSum = 0;
-            for (Employee element : employees) {
-                if (element != null) {
-                    getSum += element.getSalary();
-                }
+
+    public static void averageSalary() {
+        int getSum = 0;
+        for (Employee element : employees) {
+            int employeeCount = 0;
+            if (element != null) {
+                getSum += element.getSalary();
+                employeeCount++;
             }
-            float averageSalary = getSum / employees.length;
-            System.out.println("Средняя зарплата сотрудников: " + averageSalary + " рублей.");
-    }
+            int averageSalary = getSum / employeeCount;
+                System.out.println("Средняя зарплата сотрудников: " + averageSalary + " рублей.");
+            }
+        }
 
 
     public static void main(String[] args) {
